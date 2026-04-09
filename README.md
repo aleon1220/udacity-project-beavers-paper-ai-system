@@ -41,16 +41,16 @@ multi-agent system that supports core business operations at the fictional paper
     uv venv
     ```
 
-- action
+- prepare the python packages
 
     ```bash
-    
+    uv pip sync requirements.txt
     ```
 
-- action
+- Activate with:
 
     ```bash
-    
+    source .venv/bin/activate
     ```
 
 - action

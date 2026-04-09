@@ -1,20 +1,21 @@
 # Official Website: https://pandas.pydata.org/ 
 # PyPI: https://pypi.org/project/pandas/
-pandas==2.2.3
+# using versions from 2025
+pandas==2.3.3
 
 # Python Standard Library Docs: https://docs.python.org/3/library/typing.html
 # PyPI (Backport for legacy Python): https://pypi.org/project/typing/
 # generally necessary if you are maintaining a legacy codebase running on older Python versions
-typing==3.7.4.3
+typing==3.10.0.0
 
 # Official GitHub Repository: https://github.com/openai/openai-python
 # PyPI: https://pypi.org/project/openai/
-openai==1.76.0
+openai==2.9.0
 
 # Official Website: https://www.sqlalchemy.org/
 # PyPI: https://pypi.org/project/SQLAlchemy/
-SQLAlchemy==2.0.40
+SQLAlchemy==2.0.45
 
 # Official GitHub Repository: https://github.com/theskumar/python-dotenv
 # PyPI: https://pypi.org/project/python-dotenv/
-python-dotenv==1.1.0
+python-dotenv==1.2.1
