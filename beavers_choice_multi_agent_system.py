@@ -606,9 +606,10 @@ def search_quote_history(search_terms: List[str], limit: int = 5) -> List[Dict]:
 # Run your test scenarios by writing them here. Make sure to keep track of them.
 
 def run_test_scenarios():
-    print("running udacity-project-beavers-paper-ai-system!")
+    print("running udacity-project-beavers-paper-ai-system")
     print("Initializing Database...")
     init_database()
+    
     try:
         quote_requests_sample = pd.read_csv("quote_requests_sample.csv")
         quote_requests_sample["request_date"] = pd.to_datetime(
@@ -627,11 +628,7 @@ def run_test_scenarios():
     current_inventory = report["inventory_value"]
 
     ############
-    ############
-    ############
     # INITIALIZE YOUR MULTI AGENT SYSTEM HERE
-    ############
-    ############
     ############
 
     results = []
@@ -648,11 +645,7 @@ def run_test_scenarios():
         request_with_date = f"{row['request']} (Date of request: {request_date})"
 
         ############
-        ############
-        ############
         # USE YOUR MULTI AGENT SYSTEM TO HANDLE THE REQUEST
-        ############
-        ############
         ############
 
         # response = call_your_multi_agent_system(request_with_date)
