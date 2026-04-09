@@ -15,7 +15,7 @@ multi-agent system that supports core business operations at the fictional paper
 
 - using [uv](https://docs.astral.sh/uv/#the-pip-interface) but feel free to use `pip` or any other python package manager
 
-#### inject secrets to a target directory
+### inject secrets to a target directory
 
 - leverage onePassword with service account token Win Powershell
 
@@ -34,6 +34,8 @@ multi-agent system that supports core business operations at the fictional paper
    ```powershell
    op inject --in-file .env.tpl --out-file .env
    ```
+
+### python dependencies & packages
 
 - Install dependencies
 
@@ -64,6 +66,8 @@ multi-agent system that supports core business operations at the fictional paper
     ```bash
     uv run ruff check
     ```
+
+### Smoke test & general execution
 
 - execute the multi agent system
 
