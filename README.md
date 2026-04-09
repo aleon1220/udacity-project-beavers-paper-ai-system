@@ -53,12 +53,23 @@ multi-agent system that supports core business operations at the fictional paper
     source .venv/bin/activate
     ```
 
-- action
+- functionality similar to rye or poetry
 
     ```bash
-    
+    uv add ruff
     ```
 
+- validation
+
+    ```bash
+    uv run ruff check
+    ```
+
+- execute the multi agent system
+
+    ```bash
+    uv run beavers_choice_multi_agent_system.py
+    ```
 
 ## Diagrams Designs
 
