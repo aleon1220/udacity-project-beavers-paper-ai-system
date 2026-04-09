@@ -611,7 +611,7 @@ def search_quote_history(search_terms: List[str], limit: int = 5) -> List[Dict]:
 # Run your test scenarios by writing them here. Make sure to keep track of them.
 
 def run_test_scenarios():
-    
+    print("running udacity-project-beavers-paper-ai-system!")
     print("Initializing Database...")
     init_database()
     try:

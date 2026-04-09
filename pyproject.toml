@@ -1,0 +1,9 @@
+[project]
+name = "udacity-project-beavers-paper-ai-system"
+version = "0.1.0"
+description = "multi agent system for beavers paper project"
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = [
+    "ruff>=0.15.9",
+]
