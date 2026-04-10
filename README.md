@@ -176,6 +176,21 @@ based on the tests found in the test_file the execution is successful and achiev
 - tried using the latest libraries as of end of 2025
 - saves results to Saved results: `out/`2026-04-10_2140-test_results.csv which makes each report traceable.
 
+#### evaluation of internal business process
+
+check for count fulfilled and cash delta use `pandas`
+
+```python
+python3 - << 'PY'
+import pandas as pd
+df = pd.read_csv('out/2026-04-10_2213-test_results.csv')
+print("rows:", len(df))
+print("fulfilled:", int(df['fulfilled'].sum()))
+print("cash_changed:", int(df['cash_changed'].sum()))
+print("auto_processed_total:", float(df['total_price'].fillna(0).sum()))
+PY
+```
+
 ### Future Improvements
 
 - adding a UI chatbot interface
