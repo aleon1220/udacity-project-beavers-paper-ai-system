@@ -8,6 +8,7 @@ import ast
 from sqlalchemy.sql import text
 from datetime import datetime, timedelta
 from sqlalchemy import create_engine, Engine
+from pathlib import Path
 
 from pydantic_ai import Agent, RunContext
 import nest_asyncio
@@ -20,6 +21,16 @@ import asyncio
 dotenv.load_dotenv()
 if os.environ.get("ENABLE_NEST_ASYNCIO", "0") == "1":
     nest_asyncio.apply()
+
+# Resolve data directory: prefer absolute /data if it exists, else local ./data, overridable via DATA_DIR
+DATA_PATH = (
+    Path(os.environ.get("DATA_DIR")) if os.environ.get("DATA_DIR") else (
+        Path("/data") if Path("/data").exists() else Path(__file__).resolve().parent / "data"
+    )
+)
+
+def data_file(filename: str) -> str:
+    return str(DATA_PATH / filename)
 
 # Create an SQLite database
 db_engine = create_engine("sqlite:///munder_difflin.db")
@@ -195,14 +206,14 @@ def init_database(db_engine: Engine, seed: int = 137) -> Engine:
         # ----------------------------
         # 2. Load and initialize 'quote_requests' table
         # ----------------------------
-        quote_requests_df = pd.read_csv("data/quote_requests.csv")
+        quote_requests_df = pd.read_csv(data_file("quote_requests.csv"))
         quote_requests_df["id"] = range(1, len(quote_requests_df) + 1)
         quote_requests_df.to_sql("quote_requests", db_engine, if_exists="replace", index=False)
 
         # ----------------------------
         # 3. Load and transform 'quotes' table
         # ----------------------------
-        quotes_df = pd.read_csv("data/quotes.csv")
+        quotes_df = pd.read_csv(data_file("quotes.csv"))
         quotes_df["request_id"] = range(1, len(quotes_df) + 1)
         quotes_df["order_date"] = initial_date
 
@@ -909,7 +920,7 @@ def run_test_scenarios():
     init_database(db_engine)
     
     try:
-        quote_requests_sample = pd.read_csv("data/quote_requests_sample.csv")
+        quote_requests_sample = pd.read_csv(data_file("quote_requests_sample.csv"))
         quote_requests_sample["request_date"] = pd.to_datetime(
             quote_requests_sample["request_date"], format="%m/%d/%y", errors="coerce"
         )
