@@ -1,7 +1,7 @@
-# Official Website: https://pandas.pydata.org/ 
+# Official Website: https://pandas.pydata.org/
 # PyPI: https://pypi.org/project/pandas/
 # using versions from 2025
-pandas==2.3.3
+pandas==3.0.0
 
 # Python Standard Library Docs: https://docs.python.org/3/library/typing.html
 # PyPI (Backport for legacy Python): https://pypi.org/project/typing/
@@ -11,11 +11,11 @@ typing==3.10.0.0
 
 # Official GitHub Repository: https://github.com/openai/openai-python
 # PyPI: https://pypi.org/project/openai/
-openai==2.9.0
+openai==2.11.0
 
 # Official Website: https://www.sqlalchemy.org/
 # PyPI: https://pypi.org/project/SQLAlchemy/
-SQLAlchemy==2.0.45
+SQLAlchemy==2.0.49
 
 # Official GitHub Repository: https://github.com/theskumar/python-dotenv
 # PyPI: https://pypi.org/project/python-dotenv/
@@ -39,9 +39,18 @@ nest-asyncio==1.6.0
 
 # Official GitHub Repository: https://github.com/pydantic/pydantic-ai
 # PyPI: https://pypi.org/project/pydantic-ai/
-pydantic-ai==0.1.12
+pydantic-ai==1.41.0
 
 # PyPI: https://pypi.org/project/asyncio/
 # Note: asyncio is part of Python's standard library (including Python 3.14). Installing the PyPI backport can cause issues.
 # Keeping this entry per request; suggested action: remove this line rather than pinning.
 # asyncio
+
+# PyPI: https://pypi.org/project/python-dateutil/
+python-dateutil==2.9.0
+
+# PyPI: https://pypi.org/project/six/
+six
+
+# PyPI: https://pypi.org/project/typing_extensions/
+# typing_extensions==4.15
