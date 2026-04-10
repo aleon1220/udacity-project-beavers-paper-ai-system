@@ -1,4 +1,5 @@
 import os
+import json
 import pandas as pd
 import numpy as np
 import time
@@ -684,6 +685,24 @@ def extract_item_and_qty(request_text: str) -> tuple[str | None, int | None]:
     item = sorted(matches, key=lambda s: len(s), reverse=True)[0]
     return item, qty
 
+# --- Agent run result normalization ---
+def _agent_result_to_text(result) -> str:
+    try:
+        if isinstance(result, str):
+            return result
+        for attr in ("output", "data", "text", "message", "content"):
+            if hasattr(result, attr):
+                val = getattr(result, attr)
+                if isinstance(val, (str, int, float)):
+                    return str(val)
+                try:
+                    return json.dumps(val)
+                except Exception:
+                    return str(val)
+        return str(result)
+    except Exception:
+        return str(result)
+
 ########################
 # YOUR MULTI AGENT SYSTEM IMPLEMENTATION
 ########################
@@ -790,19 +809,19 @@ orchestrator_agent = Agent(
 async def consult_inventory(ctx: RunContext[None], query: str) -> str:
     """Ask the inventory agent a question."""
     result = await inventory_agent.run(query)
-    return result.data
+    return _agent_result_to_text(result)
 
 @orchestrator_agent.tool
 async def consult_quoting(ctx: RunContext[None], query: str) -> str:
     """Ask the quoting agent a question."""
     result = await quoting_agent.run(query)
-    return result.data
+    return _agent_result_to_text(result)
 
 @orchestrator_agent.tool
 async def consult_sales(ctx: RunContext[None], query: str) -> str:
     """Ask the sales agent a question."""
     result = await sales_agent.run(query)
-    return result.data
+    return _agent_result_to_text(result)
 
 # Additional tools for agents
 
@@ -844,7 +863,7 @@ async def init_db(ctx: RunContext[None]) -> str:
 async def fin_report(ctx: RunContext[None], date: str) -> str:
     """Get a financial report via Sales agent."""
     result = await sales_agent.run(f"Generate financial report for {date}")
-    return result.data
+    return _agent_result_to_text(result)
 
 @orchestrator_agent.tool
 async def place_order(ctx: RunContext[None], item: str, quantity: int, date: str) -> str:
@@ -868,14 +887,15 @@ def call_your_multi_agent_system(request_text: str) -> str:
     This integrates perfectly into the provided synchronous test loop.
     """
     try:
-        return asyncio.run(orchestrator_agent.run(request_text)).data
+        res = asyncio.run(orchestrator_agent.run(request_text))
+        return _agent_result_to_text(res)
     except RuntimeError:
         # If a loop is already running, create a new one explicitly
         loop = asyncio.new_event_loop()
         try:
             asyncio.set_event_loop(loop)
             result = loop.run_until_complete(orchestrator_agent.run(request_text))
-            return result.data
+            return _agent_result_to_text(result)
         finally:
             try:
                 loop.close()
