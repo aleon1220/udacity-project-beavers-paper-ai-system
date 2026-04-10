@@ -3,11 +3,7 @@
 # using versions from 2025
 pandas==3.0.0
 
-# Python Standard Library Docs: https://docs.python.org/3/library/typing.html
-# PyPI (Backport for legacy Python): https://pypi.org/project/typing/
-# generally necessary if you are maintaining a legacy codebase running on older Python versions
-# Note: Python 3.14 includes typing in the stdlib; keeping this pin per request, but recommended to remove to avoid conflicts.
-typing==3.10.0.0
+# typing backport removed to avoid conflicts on modern Python
 
 # Official GitHub Repository: https://github.com/openai/openai-python
 # PyPI: https://pypi.org/project/openai/
@@ -17,6 +13,10 @@ openai==2.11.0
 # PyPI: https://pypi.org/project/SQLAlchemy/
 SQLAlchemy==2.0.49
 
+# PyPI: https://pypi.org/project/typing-extensions
+# SQLAlchemy requires it
+typing-extensions==4.15.0
+
 # Official GitHub Repository: https://github.com/theskumar/python-dotenv
 # PyPI: https://pypi.org/project/python-dotenv/
 python-dotenv==1.2.1
@@ -25,13 +25,7 @@ python-dotenv==1.2.1
 # PyPI: https://pypi.org/project/numpy/
 numpy==2.4.4
 
-# Official Website: https://scikit-learn.org/
-# PyPI: https://pypi.org/project/scikit-learn/
-scikit-learn==1.8.0
-
-# Official GitHub Repository: https://github.com/huggingface/smolagents
-# PyPI: https://pypi.org/project/smolagents/
-smolagents==1.23.0
+# Removed scikit-learn and smolagents (not used)
 
 # Official GitHub Repository: https://github.com/erdewit/nest_asyncio
 # PyPI: https://pypi.org/project/nest-asyncio/
@@ -39,7 +33,10 @@ nest-asyncio==1.6.0
 
 # Official GitHub Repository: https://github.com/pydantic/pydantic-ai
 # PyPI: https://pypi.org/project/pydantic-ai/
-pydantic-ai==1.41.0
+pydantic-ai==1.50.0
+
+# Async concurrency backend used by pydantic-graph
+anyio>=4.3
 
 # PyPI: https://pypi.org/project/asyncio/
 # Note: asyncio is part of Python's standard library (including Python 3.14). Installing the PyPI backport can cause issues.
@@ -51,6 +48,3 @@ python-dateutil==2.9.0
 
 # PyPI: https://pypi.org/project/six/
 six
-
-# PyPI: https://pypi.org/project/typing_extensions/
-# typing_extensions==4.15
