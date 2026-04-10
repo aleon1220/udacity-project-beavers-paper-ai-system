@@ -1,0 +1,334 @@
+request_id,request_date,fulfilled,cash_changed,total_price,eta,reason,cash_balance,inventory_value,response
+1,2025-04-01,False,False,0.0,2025-04-05,"Insufficient stock: have 188, need 200",45116.7,4880.3,"Based on the information from our inventory:
+
+1. **A4 Glossy Paper** – Currently, we have zero units in stock. However, a delivery of 1000 units was scheduled for October 24, 2023. It may be advisable to confirm if this has already been restocked or if there are still delays.
+
+2. **Heavy Cardstock (White)** – This item is currently out of stock. Would you like me to follow up on the estimated delivery date?
+
+3. **Colored Paper (Assorted Colors)** – There is no stock available at the moment. I can also look into the estimated delivery date for restocking this item if you wish.
+
+Please let me know how you would like to proceed, or if you have alternative options or suggestions, I'm here to assist you further.
+
+[Progress Preview]
+  - Parsed: 200 × Colored paper
+  - Inventory: Colored paper stock = 188
+  - Quotes: 5 matching record(s)
+  - Estimate: unit=$0.10, disc=5%, total=$19.00, ETA=2025-04-05
+  - Orchestrator: combining inventory, quotes, and sales policies"
+2,2025-04-03,False,False,0.0,,Could not extract item/quantity from request.,45116.7,4880.3,"It seems that we encountered an issue with fulfilling the order for the items requested: colorful poster paper, streamers, and balloons. Unfortunately, these specific items don't match our current product listings.
+
+Here's how we can proceed:
+
+1. **Colorful Poster Paper:** If you're looking for a specific type of paper, such as colored card stock or glossy paper, please let me know so I can check the inventory again.
+   
+2. **Streamers and Balloons:** These items might not be part of our standard inventory. If there are alternative types of paper products or decorations you are interested in, feel free to provide details, and we can search for those options.
+
+Please let me know if you need alternative products or any further assistance with other items, and we'll work to meet your needs.
+
+[Progress Preview]
+  - Parsed: could not confidently extract item/qty
+  - Inventory: 18 items in stock
+  - Quotes: 5 matching record(s)
+  - Estimate: awaiting structured details from request
+  - Orchestrator: combining inventory, quotes, and sales policies"
+3,2025-04-04,True,True,0.0,,,45117.2,4879.8,"Here's the status of your requested order for delivery by April 15, 2025:
+
+1. **A4 Paper:**
+   - Requested: 10,000 sheets
+   - Status: Insufficient stock. Current stock is 262 sheets. We can backorder to fulfill the request by **April 22, 2025**. There's a bulk discount available: 15% for orders over 1000 sheets.
+
+2. **A3 Paper:** 
+   - Requested: 5,000 sheets
+   - Status: Unfortunately, we do not recognize ""A3 paper"" in our inventory. Could you please verify the item name or share more details?
+
+3. **Printer Paper:**
+   - Requested: 500 reams
+   - Status: We currently do not have ""printer paper"" listed in our inventory. Please check the product name or provide specific details about the product.
+
+Please confirm if you would like to proceed with the backorder for A4 paper or provide additional information for the other items.
+
+[Progress Preview]
+  - Parsed: 10 × A4 paper
+  - Inventory: A4 paper stock = 262
+  - Quotes: 5 matching record(s)
+  - Estimate: unit=$0.05, disc=0%, total=$0.50, ETA=2025-04-04
+  - Orchestrator: combining inventory, quotes, and sales policies"
+4,2025-04-05,True,True,0.0,,,45235.95,4754.8,"It seems that currently, both items you requested are out of stock. Here's the breakdown of availability and expected delivery times for each:
+
+1. **High-Quality Recycled Cardstock:**
+   - **Quantity Requested:** 500 sheets
+   - **Current Stock:** 0 sheets
+   - **Estimated Delivery Date if Ordered Now:** April 10, 2025
+
+2. **A4 Size Printer Paper:**
+   - **Quantity Requested:** 250 sheets
+   - **Current Stock:** 0 sheets
+   - **Estimated Delivery Date if Ordered Now:** April 8, 2025
+
+Given these timelines, if you proceed with the order today, the items should arrive well before April 15, 2025, which aligns with your delivery needs.
+
+The total cost will be calculated based on our standard pricing, with a 5% bulk discount applied to the recycled cardstock order since it falls within the 101-500 units range. Would you like to proceed with placing the order?
+
+[Progress Preview]
+  - Parsed: 500 × Cardstock
+  - Inventory: Cardstock stock = 95
+  - Quotes: 5 matching record(s)
+  - Estimate: unit=$0.15, disc=5%, total=$71.25, ETA=2025-04-09
+  - Orchestrator: combining inventory, quotes, and sales policies"
+5,2025-04-05,False,False,0.0,2025-04-09,"Insufficient stock: have -312, need 500",45235.95,4754.8,"It seems there was an issue with placing your order due to unrecognized item descriptions in our inventory system:
+
+1. **500 sheets of 8.5""x11"" colored paper**: This item was not identified in our current inventory catalog.
+2. **300 sheets of cardstock in various colors**: Our system couldn't recognize this item.
+3. **200 rolls of decorative washi tape**: Unfortunately, this item wasn't found in our inventory list.
+
+To resolve this, could you please provide more specific product codes or descriptions, or verify if these products are listed differently in our catalog? This will help us accurately place your order and provide any available estimated delivery timelines.
+
+[Progress Preview]
+  - Parsed: 500 × Colored paper
+  - Inventory: Colored paper stock = -312
+  - Quotes: 5 matching record(s)
+  - Estimate: unit=$0.10, disc=5%, total=$47.50, ETA=2025-04-09
+  - Orchestrator: combining inventory, quotes, and sales policies"
+6,2025-04-06,False,False,0.0,2025-04-10,"Insufficient stock: have 95, need 500",45235.95,4754.8,"It seems we have some constraints with your requested order due on April 15, 2025. Here's an overview:
+
+1. **Colorful Construction Paper (500 sheets):** There is currently no stock available. We will need to reorder this item. Please specify if you would like to proceed with a new order, and I can provide the estimated delivery date.
+
+2. **White Printer Paper (300 sheets):** This item is also out of stock. I can check the estimated delivery date from the supplier if you wish to proceed.
+
+3. **Cardstock in Various Colors (200 sheets):** Similar to the others, this item is not in stock. Would you like me to obtain an estimated delivery date?
+
+Could you please confirm if you would like to proceed with placing new orders for these items?
+
+[Progress Preview]
+  - Parsed: 500 × Cardstock
+  - Inventory: Cardstock stock = 95
+  - Quotes: 5 matching record(s)
+  - Estimate: unit=$0.15, disc=5%, total=$71.25, ETA=2025-04-10
+  - Orchestrator: combining inventory, quotes, and sales policies"
+7,2025-04-07,True,True,0.0,,,45311.95,4674.8,"It seems that we encountered issues with our inventory system, which did not recognize the specific items you requested for your upcoming exhibition. Here is a summary of the current situation:
+
+- **500 sheets of glossy A4 paper**: The system indicated an error, labeling it as an unknown item.
+- **1000 sheets of matte A3 paper**: Also flagged as an unknown item.
+- **300 poster boards (24"" x 36"")**: Reported as an unknown item.
+- **200 sheets of heavyweight cardstock**: Marked as an unknown item.
+
+Unfortunately, this means I cannot process your order at this time. I recommend checking item specifications or contacting us to clarify item details. If these items are variations or custom options, please let us know so we can assist further in ensuring we have the correct items in stock or identify alternatives.
+
+Please feel free to reach out for any other assistance, and I apologize for any inconvenience this might have caused.
+
+[Progress Preview]
+  - Parsed: 500 × Cardstock
+  - Inventory: Cardstock stock = 95
+  - Quotes: 5 matching record(s)
+  - Estimate: unit=$0.15, disc=5%, total=$71.25, ETA=2025-04-11
+  - Orchestrator: combining inventory, quotes, and sales policies"
+8,2025-04-07,False,False,0.0,2025-04-11,"Insufficient stock: have -312, need 500",45311.95,4674.8,"We encountered issues fulfilling your order due to unavailable inventory for the requested items. Here's an outline of the current situation:
+
+1. **A4 Glossy Paper (500 sheets)**: Unfortunately, we currently do not stock A4 glossy paper or a direct equivalent. We can look into ordering this from a supplier if it's essential for your needs.
+
+2. **A4 Matte Paper (1000 sheets)**: We don't have A4 matte paper or an equivalent in our inventory. I can check with suppliers to see potential re-order options or delivery possibilities beyond April 15, 2025.
+
+3. **A5 Colored Paper (2000 sheets)**: There's no available stock of A5 colored paper or equivalents. I can inquire about future delivery dates or suggest substitutes if needed.
+
+4. **A4 Recycled Paper (3000 sheets)**: We don't carry A4 recycled paper or a comparable alternative at this time.
+
+Please let me know if you would like us to pursue ordering these items from our suppliers or explore other options like alternative products. We are committed to assisting you promptly with your event needs.
+
+[Progress Preview]
+  - Parsed: 500 × Colored paper
+  - Inventory: Colored paper stock = -312
+  - Quotes: 5 matching record(s)
+  - Estimate: unit=$0.10, disc=5%, total=$47.50, ETA=2025-04-11
+  - Orchestrator: combining inventory, quotes, and sales policies"
+9,2025-04-07,False,False,0.0,2025-04-11,"Insufficient stock: have 187, need 200",45311.95,4674.8,"Currently, we do not have stock for the items you requested:
+
+1. **A4 White Printer Paper:** We're unable to fulfill this request right now. To provide an estimated delivery date from our suppliers, I would need additional details, such as any specific ordering options preferred.
+
+2. **A3 Glossy Paper:** Similarly, we need more details about the shipping preferences and quantity specifics to provide an accurate delivery estimate.
+
+3. **100% Recycled Kraft Paper Envelopes:** For an estimated delivery date, please confirm the quantity required along with any shipment details.
+
+Please let me know if you have any specific requirements or preferences, and I'll be glad to assist in arranging an order with our suppliers.
+
+[Progress Preview]
+  - Parsed: 200 × Glossy paper
+  - Inventory: Glossy paper stock = 187
+  - Quotes: 5 matching record(s)
+  - Estimate: unit=$0.20, disc=5%, total=$38.00, ETA=2025-04-11
+  - Orchestrator: combining inventory, quotes, and sales policies"
+13,2025-04-08,False,False,0.0,2025-04-12,"Insufficient stock: have 95, need 500",45311.95,4674.8,"It seems that there was an error in processing your request for 500 sheets of A4 printing paper and 200 sheets of cardstock due to both items being unrecognized in our current listing. Please verify the specific products you need, such as any brand name or specific type, so that I can help you more effectively. Alternatively, if possible, I can have someone from our team contact you to clarify your needs.
+
+[Progress Preview]
+  - Parsed: 500 × Cardstock
+  - Inventory: Cardstock stock = 95
+  - Quotes: 5 matching record(s)
+  - Estimate: unit=$0.15, disc=5%, total=$71.25, ETA=2025-04-12
+  - Orchestrator: combining inventory, quotes, and sales policies"
+12,2025-04-08,False,False,0.0,2025-04-12,"Insufficient stock: have 95, need 200",45311.95,4674.8,"Here's an update on your request:
+
+1. **Inventory Check**: Unfortunately, we currently do not have stock available for the colorful cardstock, standard printer paper, or paper napkins. If you’d like, I can check estimated delivery dates with our suppliers to determine when these items might be available again.
+
+2. **Pricing Quotes**: Based on historical data, here are the quotes for your requested items:
+   - **Colorful Cardstock (200 sheets)**: Previously priced around $0.15 per sheet, with applicable bulk discounts, bringing past orders for this quantity to approximately $30.
+   - **Standard Printer Paper (500 sheets)**: Historically priced at about $0.05–$0.06 per sheet, with bulk discounts. A similar past order was quoted around $25.
+   - **Paper Napkins (100 pieces)**: Individual pricing around $0.02 each. Historically, orders for 100 napkins were around $2 when part of a larger purchase. A total of around $57 was typical for all three categories together, taking bulk discounts into account.
+
+3. **Item Code Resolution**: There seems to be a misunderstanding with the item codes for these products. Please consider the following actions:
+   - Verify the item names or codes in your records to ensure accuracy.
+   - Contact your inventory management team to confirm these items are listed properly in your system.
+   - If needed, update your database to reflect these items with their correct identifiers.
+
+If you would like me to proceed with checking on estimated delivery times or assist further with your order, please let me know!
+
+[Progress Preview]
+  - Parsed: 200 × Cardstock
+  - Inventory: Cardstock stock = 95
+  - Quotes: 5 matching record(s)
+  - Estimate: unit=$0.15, disc=5%, total=$28.50, ETA=2025-04-12
+  - Orchestrator: combining inventory, quotes, and sales policies"
+10,2025-04-08,False,False,0.0,2025-04-12,"Insufficient stock: have 187, need 500",45311.95,4674.8,"It seems there was a misunderstanding with the inventory status for your request. Here's what I found:
+
+1. **High-Quality Glossy Paper**: We're unable to fulfill the 500 sheets order by April 15, 2025. However, these can be received by November 4, 2025. 
+
+2. **Sturdy Cardstock**: The required 300 sheets can be delivered by April 17, 2025. 
+
+Please let us know if these delivery dates work for you or if you would like any adjustments. Note that for the high-quality glossy paper, since it's not a known item, we'll need to confirm specifications or check alternatives.
+
+[Progress Preview]
+  - Parsed: 500 × Glossy paper
+  - Inventory: Glossy paper stock = 187
+  - Quotes: 5 matching record(s)
+  - Estimate: unit=$0.20, disc=5%, total=$95.00, ETA=2025-04-12
+  - Orchestrator: combining inventory, quotes, and sales policies"
+11,2025-04-08,False,False,0.0,2025-04-12,"Insufficient stock: have 187, need 500",45311.95,4674.8,"Currently, we don't have any A3 glossy paper or A4 matte paper in stock. We attempted to order these items for you, but there were issues due to them being unrecognized in our system.
+
+Unfortunately, I also couldn't retrieve specific delivery estimates for these products. I recommend contacting your supplier or retailer directly for precise delivery information based on their stock availability and shipping options.
+
+If you need further assistance or an alternative solution, please let us know!
+
+[Progress Preview]
+  - Parsed: 500 × Glossy paper
+  - Inventory: Glossy paper stock = 187
+  - Quotes: 5 matching record(s)
+  - Estimate: unit=$0.20, disc=5%, total=$95.00, ETA=2025-04-12
+  - Orchestrator: combining inventory, quotes, and sales policies"
+14,2025-04-09,True,True,0.0,,,45312.7,4674.05,"Here's the status of your requested order:
+
+1. **A4 Paper (5,000 sheets)**: We currently have only 262 sheets in stock. However, we can fulfill the entire order by placing a backorder. The expected delivery date for the A4 paper will be April 22, 2025, slightly later than the requested date.
+
+2. **Poster Paper (2,000 sheets)**: Unfortunately, we don't have ""poster paper"" as a recognized item in our current inventory system. Could you please provide more details on this item or inquire about a similar product?
+
+3. **Cardstock (500 sheets)**: Similarly, ""cardstock"" isn't recognized as a separate item in our inventory. Please specify additional details or alternative options that you might be considering.
+
+These orders qualify for bulk discounts. For A4 paper exceeding 1000 units, a *15% discount* applies to your order. Let's confirm details, especially regarding the poster paper and cardstock, so that we can finalize and process everything smoothly.
+
+[Progress Preview]
+  - Parsed: 5 × Cardstock
+  - Inventory: Cardstock stock = 90
+  - Quotes: 5 matching record(s)
+  - Estimate: unit=$0.15, disc=0%, total=$0.75, ETA=2025-04-09
+  - Orchestrator: combining inventory, quotes, and sales policies"
+15,2025-04-12,True,True,0.0,,,45313.7,4673.05,"It seems we have encountered some issues with placing orders due to inventory constraints. Here's the breakdown:
+
+- **A4 White Paper**: Our system could not identify this item directly. We need to verify its availability; however, if possible, further details about stock levels or lead times from suppliers are required to proceed. Could you specify if you've used a different description or require a consultation for alternative options?
+
+- **A3 Colored Paper**: Currently, there is no stock available. The next expected delivery from the supplier is for 1,000 sheets only, and past notifications indicated a potential restock by October 9, 2023. Technologies may need updating for precise estimations.
+
+- **Cardboard for Signage**: There is also no available stock at the moment. A shipment of 1,000 units has an estimated delivery by October 28, 2023.
+
+For large orders, we can apply bulk discounts:
+- Orders between 101-500 units receive a 5% discount.
+- Orders between 501-1000 units receive a 10% discount.
+- Orders over 1000 units receive a 15% discount.
+
+Given the circumstances, I recommend arranging a special procurement order to align with your requirements. Would you like us to explore alternative options or potentially different combinations to meet your needs?
+
+[Progress Preview]
+  - Parsed: 10 × Colored paper
+  - Inventory: Colored paper stock = -322
+  - Quotes: 5 matching record(s)
+  - Estimate: unit=$0.10, disc=0%, total=$1.00, ETA=2025-04-12
+  - Orchestrator: combining inventory, quotes, and sales policies"
+16,2025-04-13,False,False,0.0,,Could not extract item/quantity from request.,45313.7,4673.05,"Here's the current status for the items you wanted to order:
+
+- **A4 Printer Paper:** It appears there was an issue with determining the stock. Please specify if there's any particular way you know this item might be listed, or if there's a specific brand you are referring to, so I can refine the inquiry.
+
+- **Colorful Construction Paper:** We currently have no stock available, but if ordering in bulk (1,000 units), we can procure them with an estimated delivery date of October 13, 2023. Since your need is for a smaller quantity and a much earlier date, this is a constraint.
+
+- **Poster Board:** Similarly, we're currently out of stock. An order of 1,000 units would arrive by November 5, 2023. Again, for the smaller quantity needed sooner, we would face a delay.
+
+Would you like to adjust the item specifications, explore alternative products, or proceed in some other manner? Let me know how I can assist!
+
+[Progress Preview]
+  - Parsed: could not confidently extract item/qty
+  - Inventory: 17 items in stock
+  - Quotes: 5 matching record(s)
+  - Estimate: awaiting structured details from request
+  - Orchestrator: combining inventory, quotes, and sales policies"
+17,2025-04-14,False,False,0.0,2025-04-18,"Insufficient stock: have -322, need 1000",45313.7,4673.05,"It seems there was an issue recognizing the items you requested, and unfortunately, the system could not proceed with your order for delivery by April 15, 2025. Here's a breakdown:
+
+- **A4 White Printer Paper (1000 sheets)**: Unable to fulfill order due to item not being recognized.
+- **A3 Colored Paper (500 sheets)**: Unable to fulfill order due to item not being recognized.
+- **Table Napkins (2000 pieces)**: Unable to fulfill order due to item not being recognized.
+- **Biodegradable Paper Cups (1000 pieces)**: Unable to fulfill order due to item not being recognized.
+- **Biodegradable Paper Plates (500 pieces)**: Unable to fulfill order due to item not being recognized.
+
+I recommend ensuring that the product descriptions match the configurations we have on file or contacting our support team for further assistance. You may also want to consult with our sales agent for alternative solutions or compatible items. Let me know if you would like help proceeding with that!
+
+[Progress Preview]
+  - Parsed: 1000 × Colored paper
+  - Inventory: Colored paper stock = -322
+  - Quotes: 5 matching record(s)
+  - Estimate: unit=$0.10, disc=10%, total=$90.00, ETA=2025-04-18
+  - Orchestrator: combining inventory, quotes, and sales policies"
+18,2025-04-14,False,False,0.0,2025-04-18,"Insufficient stock: have -322, need 500",45313.7,4673.05,"It looks like we are currently out of stock for the items you've requested, but here's the plan moving forward:
+
+1. **High-Quality White Cardstock (500 sheets):** 
+   - We have no stock available at the moment. If you place an order, we could have it delivered to you by November 11, 2023. You would also qualify for a 5% bulk discount.
+
+2. **Standard Printing Paper (1000 sheets):** 
+   - We can arrange to have these delivered by October 27, 2023. This quantity qualifies for a 10% bulk discount.
+
+3. **Colored Paper in Assorted Colors (200 sheets):** 
+   - This item is presently out of stock. However, if ordered, it can be delivered by October 9, 2023.
+
+I apologize for any inconvenience caused by the unavailability of these items right now. Please let us know if you would like to go ahead with placing these orders for the earliest possible delivery.
+
+[Progress Preview]
+  - Parsed: 500 × Colored paper
+  - Inventory: Colored paper stock = -322
+  - Quotes: 5 matching record(s)
+  - Estimate: unit=$0.10, disc=5%, total=$47.50, ETA=2025-04-18
+  - Orchestrator: combining inventory, quotes, and sales policies"
+19,2025-04-15,False,False,0.0,2025-04-22,"Insufficient stock: have 187, need 2000",45313.7,4673.05,"Thank you for reaching out to us regarding your paper supply needs for the upcoming exhibition. Here's the current status for the items you've requested:
+
+1. **A4 Glossy Paper:** We do not have A4 glossy paper or any similar items available in stock. Please let us know if you're interested in checking for alternatives or if you would like us to evaluate re-order options.
+
+2. **A3 Matte Paper:** Unfortunately, we don't have any A3 matte paper or similar items in stock either. If you'd like, we can look into re-ordering options or provide estimates for potential delivery dates when the stock is available.
+
+3. **Cardstock in Assorted Colors:** At this time, there is no stock available for cardstock in assorted colors or similar items. If you're interested in exploring alternatives or need further assistance, feel free to let us know.
+
+Due to the constraints with stock, I'm unable to fulfill your current order by the requested delivery date of April 20, 2025. Please let us know how you would like to proceed, and we will do our best to accommodate your needs.
+
+[Progress Preview]
+  - Parsed: 2000 × Glossy paper
+  - Inventory: Glossy paper stock = 187
+  - Quotes: 5 matching record(s)
+  - Estimate: unit=$0.20, disc=15%, total=$340.00, ETA=2025-04-22
+  - Orchestrator: combining inventory, quotes, and sales policies"
+20,2025-04-17,False,False,0.0,,Could not extract item/quantity from request.,45313.7,4673.05,"It seems we're experiencing some limitations with our current stock and system categorization for your requested items. Here's what I found:
+
+- **Flyers**: Currently, we do not have any flyers in stock. The earliest estimated delivery date from our supplier for an order similar to your needs (1,000 units) is November 5, 2023. I'll need to confirm if this timeframe would align similarly for your larger quantity.
+
+- **Posters**: Our current stock of posters is also depleted. For a new order, I can check with our supplier to procure an ETA specific to the 2,000 units you require.
+
+- **Tickets**: It seems there's some confusion regarding ""tickets."" Could you provide more details or specifications for these tickets? Perhaps clarifying the type or format can help us better assess how we can fulfill this part of your order.
+
+Once I have further details, I can coordinate with suppliers and confirm pricing, including any applicable bulk discounts, ensuring a timely delivery before your concert.
+
+[Progress Preview]
+  - Parsed: could not confidently extract item/qty
+  - Inventory: 17 items in stock
+  - Quotes: 5 matching record(s)
+  - Estimate: awaiting structured details from request
+  - Orchestrator: combining inventory, quotes, and sales policies"
