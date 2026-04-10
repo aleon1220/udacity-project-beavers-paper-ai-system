@@ -168,12 +168,13 @@ graph TD
 
 ### Evaluation Discussion
 
-based on the tests found in the test_file the execution is successful and achieves the goals of learning.
+based on the tests found in the test_file the execution is successful and achieves the goals of learning about agent orchestration
 
 ### Industry Best Practices
 
 - use of a new kid in town `uv`
 - tried using the latest libraries as of end of 2025
+- saves results to Saved results: `out/`2026-04-10_2140-test_results.csv which makes each report traceable.
 
 ### Future Improvements
 

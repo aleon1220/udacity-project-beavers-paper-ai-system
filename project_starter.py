@@ -2,10 +2,9 @@ import pandas as pd
 import numpy as np
 import time
 import ast
-from sqlalchemy.sql import text
 from datetime import datetime, timedelta
 from typing import Dict, List, Union
-from sqlalchemy import create_engine, Engine
+from sqlalchemy import create_engine, text, Engine
 
 # Create an SQLite database
 db_engine = create_engine("sqlite:///munder_difflin.db")

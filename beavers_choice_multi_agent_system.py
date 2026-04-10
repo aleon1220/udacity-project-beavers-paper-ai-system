@@ -960,7 +960,6 @@ def run_test_scenarios():
         # USE YOUR MULTI AGENT SYSTEM TO HANDLE THE REQUEST
         ############
         prev_cash = current_cash
-        prev_inventory = current_inventory
 
         response = call_your_multi_agent_system(request_with_date)
 
@@ -1025,10 +1024,16 @@ def run_test_scenarios():
     print(f"Final Cash: ${final_report['cash_balance']:.2f}")
     print(f"Final Inventory: ${final_report['inventory_value']:.2f}")
 
-    # Save results
+    # Save results (timestamped and compatibility copies)
     df_out = pd.DataFrame(results)
+    timestamp = datetime.now().strftime("%Y-%m-%d_%H%M")
+    out_filename = f"{timestamp}-test_results.csv"
+    out_path = (Path("out") / out_filename)
+    df_out.to_csv(out_path, index=False)
+    # Keep convenience copies
     df_out.to_csv("out/test_results.csv", index=False)
     df_out.to_csv("test_results.csv", index=False)
+    print(f"Saved results: {out_path}")
     return results
 
 
