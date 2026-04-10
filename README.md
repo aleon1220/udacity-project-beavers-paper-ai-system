@@ -46,7 +46,7 @@ multi-agent system that supports core business operations at the fictional paper
 - prepare the python packages
 
     ```bash
-    uv pip sync requirements.txt
+    uv pip install -r requirements.txt
     ```
 
 - Activate with:
@@ -66,6 +66,13 @@ multi-agent system that supports core business operations at the fictional paper
     ```bash
     uv run ruff check
     ```
+
+- sync pip packages
+
+    ```bash
+    uv pip sync requirements.txt
+    ```
+
 
 ### Smoke test & general execution
 
