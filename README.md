@@ -109,9 +109,26 @@ graph TD
     Sales -.->| use python tools transaction | Database
 ```
 
+---
+
+## Submission Checklist
+
+Make sure to submit the following files:
+
+1. Your completed `template.py` or `project_starter.py` with all agent logic
+2. A **workflow diagram** describing your agent architecture and data flow
+3. A `README.txt` or `design_notes.txt` explaining how your system works
+4. Outputs from your test run (like `test_results.csv`)
+
+---
+
+## Reflective Report
+
+Orchestrator/Worker pattern facilitates the interaction with the internal system set up by the project_starter functionality.
+
 ### Agent implementation details
 
-Comprehensive Tool Mapping to all agents and tools
+the diagram below shows the implementation details: Comprehensive Tool Mapping to all agents and tools
 
 ```mermaid
 graph TD
@@ -142,15 +159,16 @@ graph TD
     Sales -.->|"Tool: process_order<br/>uses: create_transaction<br/><br/>Tool: financial_audit<br/>uses: get_cash_balance, generate_financial_report" | DB
 ```
 
----
+### Evaluation Discussion
 
-## Submission Checklist
+based on the tests found in the test_file the execution is successful and achieves the goals of learning.
 
-Make sure to submit the following files:
+### Industry Best Practices
 
-1. Your completed `template.py` or `project_starter.py` with all agent logic
-2. A **workflow diagram** describing your agent architecture and data flow
-3. A `README.txt` or `design_notes.txt` explaining how your system works
-4. Outputs from your test run (like `test_results.csv`)
+- use of a new kid in town `uv`
+- tried using the latest libraries as of end of 2025
 
----
+### Future Improvements
+
+- adding a UI chatbot interface
+- an automatic selector of LLM models
