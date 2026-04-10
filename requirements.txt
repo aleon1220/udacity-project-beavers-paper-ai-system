@@ -6,6 +6,7 @@ pandas==2.3.3
 # Python Standard Library Docs: https://docs.python.org/3/library/typing.html
 # PyPI (Backport for legacy Python): https://pypi.org/project/typing/
 # generally necessary if you are maintaining a legacy codebase running on older Python versions
+# Note: Python 3.14 includes typing in the stdlib; keeping this pin per request, but recommended to remove to avoid conflicts.
 typing==3.10.0.0
 
 # Official GitHub Repository: https://github.com/openai/openai-python
@@ -19,3 +20,28 @@ SQLAlchemy==2.0.45
 # Official GitHub Repository: https://github.com/theskumar/python-dotenv
 # PyPI: https://pypi.org/project/python-dotenv/
 python-dotenv==1.2.1
+
+# Official Website: https://numpy.org/
+# PyPI: https://pypi.org/project/numpy/
+numpy==2.4.4
+
+# Official Website: https://scikit-learn.org/
+# PyPI: https://pypi.org/project/scikit-learn/
+scikit-learn==1.8.0
+
+# Official GitHub Repository: https://github.com/huggingface/smolagents
+# PyPI: https://pypi.org/project/smolagents/
+smolagents==1.23.0
+
+# Official GitHub Repository: https://github.com/erdewit/nest_asyncio
+# PyPI: https://pypi.org/project/nest-asyncio/
+nest-asyncio==1.6.0
+
+# Official GitHub Repository: https://github.com/pydantic/pydantic-ai
+# PyPI: https://pypi.org/project/pydantic-ai/
+pydantic-ai==0.1.12
+
+# PyPI: https://pypi.org/project/asyncio/
+# Note: asyncio is part of Python's standard library (including Python 3.14). Installing the PyPI backport can cause issues.
+# Keeping this entry per request; suggested action: remove this line rather than pinning.
+# asyncio
