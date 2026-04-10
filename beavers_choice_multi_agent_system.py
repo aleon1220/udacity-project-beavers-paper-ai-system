@@ -714,6 +714,96 @@ def _agent_result_to_text(result) -> str:
     except Exception:
         return str(result)
 
+# --- Terminal animation helpers (non-mutating) ---
+_SPINNER_FRAMES = [
+    "⠋", "⠙", "⠹", "⠸", "⠼", "⠴", "⠦", "⠧", "⠇", "⠏"
+]
+
+def _spin_once(prefix: str, frame_idx: int) -> None:
+    frame = _SPINNER_FRAMES[frame_idx % len(_SPINNER_FRAMES)]
+    print(f"\r{frame} {prefix}", end="", flush=True)
+
+def _animate_step(title: str, duration: float = 0.6) -> None:
+    start = time.time()
+    i = 0
+    while time.time() - start < duration:
+        _spin_once(title, i)
+        time.sleep(0.08)
+        i += 1
+    print(f"\r✓ {title}")
+
+def _format_money(v: float | int | None) -> str:
+    try:
+        return f"${float(v):,.2f}"
+    except Exception:
+        return "$0.00"
+
+def show_processing_animation(request_text: str, request_date: str) -> str:
+    """Render a short terminal animation explaining how the request is processed.
+
+    This function does NOT mutate the database; it just previews steps & estimates.
+    Returns a compact multi-line summary that can be appended to the response.
+    """
+    summary_lines: list[str] = []
+
+    # Step 1: Parse request
+    _animate_step("Parsing request details…")
+    item_guess, qty_guess = extract_item_and_qty(request_text)
+    if item_guess and qty_guess:
+        summary_lines.append(f"Parsed: {qty_guess} × {item_guess}")
+    elif item_guess:
+        summary_lines.append(f"Parsed item: {item_guess} (quantity missing)")
+    else:
+        summary_lines.append("Parsed: could not confidently extract item/qty")
+
+    # Step 2: Inventory snapshot
+    _animate_step("Checking inventory availability…")
+    if item_guess:
+        try:
+            stock_df = get_stock_level(item_guess, request_date)
+            stock = int(stock_df["current_stock"].iloc[0]) if not stock_df.empty else 0
+            summary_lines.append(f"Inventory: {item_guess} stock = {stock}")
+        except Exception:
+            summary_lines.append("Inventory: lookup error")
+    else:
+        snap = get_all_inventory(request_date)
+        summary_lines.append(f"Inventory: {len(snap)} items in stock")
+
+    # Step 3: Quote history
+    _animate_step("Searching quote history…")
+    try:
+        key = item_guess or "paper"
+        hist = search_quote_history([key])
+        summary_lines.append(f"Quotes: {len(hist)} matching record(s)")
+    except Exception:
+        summary_lines.append("Quotes: lookup error")
+
+    # Step 4: ETA & pricing estimate (non-committal)
+    _animate_step("Estimating ETA & pricing…")
+    if item_guess and qty_guess:
+        unit_price = get_unit_price(item_guess) or 0.0
+        if qty_guess <= 100:
+            discount = 0.00
+        elif qty_guess <= 500:
+            discount = 0.05
+        elif qty_guess <= 1000:
+            discount = 0.10
+        else:
+            discount = 0.15
+        est_total = unit_price * qty_guess * (1 - discount)
+        eta = get_supplier_delivery_date(request_date, qty_guess)
+        summary_lines.append(
+            f"Estimate: unit={_format_money(unit_price)}, disc={int(discount*100)}%, total={_format_money(est_total)}, ETA={eta}"
+        )
+    else:
+        summary_lines.append("Estimate: awaiting structured details from request")
+
+    # Step 5: Orchestrator
+    _animate_step("Consulting Orchestrator & tools…")
+    summary_lines.append("Orchestrator: combining inventory, quotes, and sales policies")
+
+    return "\n".join(f"  - {ln}" for ln in summary_lines)
+
 ########################
 # YOUR MULTI AGENT SYSTEM IMPLEMENTATION
 ########################
@@ -956,6 +1046,10 @@ def run_test_scenarios():
         # Process request
         request_with_date = f"{row['request']} (Date of request: {request_date})"
 
+        # Visual progress animation (non-mutating preview)
+        progress_preview = show_processing_animation(row['request'], request_date)
+        print(progress_preview)
+
         ############
         # USE YOUR MULTI AGENT SYSTEM TO HANDLE THE REQUEST
         ############
@@ -996,7 +1090,9 @@ def run_test_scenarios():
             else:
                 reason = "Could not extract item/quantity from request."
 
-        print(f"Response: {response}")
+        # Append the visual preview summary to the response for transparency
+        response_with_preview = response + "\n\n[Progress Preview]\n" + progress_preview
+        print(f"Response: {response_with_preview}")
         print(f"Updated Cash: ${current_cash:.2f}")
         print(f"Updated Inventory: ${current_inventory:.2f}")
 
@@ -1011,7 +1107,7 @@ def run_test_scenarios():
                 "reason": reason,
                 "cash_balance": current_cash,
                 "inventory_value": current_inventory,
-                "response": response,
+                "response": response_with_preview,
             }
         )
 
