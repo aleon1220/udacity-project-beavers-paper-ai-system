@@ -1,8 +1,6 @@
 import pandas as pd
 import numpy as np
-import os
 import time
-import dotenv
 import ast
 from sqlalchemy.sql import text
 from datetime import datetime, timedelta
@@ -649,8 +647,7 @@ def run_test_scenarios():
         print(f"Cash Balance: ${current_cash:.2f}")
         print(f"Inventory Value: ${current_inventory:.2f}")
 
-        # Process request
-        request_with_date = f"{row['request']} (Date of request: {request_date})"
+        # Process request (starter template leaves this to the student)
 
         ############
         ############
@@ -661,6 +658,7 @@ def run_test_scenarios():
         ############
 
         # response = call_your_multi_agent_system(request_with_date)
+        response = ""
 
         # Update state
         report = generate_financial_report(request_date)
